@@ -11,13 +11,21 @@
 <body>
     <h1>Мини приложение</h1>
 
-    <a href="https://max.ru/dev_testing_bot?startapp=test">Регистрация в 1 клик</a>
+    <button id="close_app">Закрыть приложение</button>
 
     <script src="https://st.max.ru/js/max-web-app.js"></script>
 
     <script>
         const user = WebApp.initData;
         console.log(user);
+
+        const button = document.querySelector('#close_app');
+
+        console.log(button);
+        
+        button.addEventListener('click', () => {
+            window.WebApp.close();
+        })
     </script>
 </body>
 </html>
