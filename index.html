@@ -44,7 +44,7 @@
         // })
 
         function OpenMaxLinkFunction() {
-            window.WebApp.openMaxLink("https://max.ru/pupu2").then(res => {
+            window.WebApp.openMaxLink("https://max.ru/dev_testing_bot?start=test").then(res => {
                 savedkey = JSON.stringify(res);
                 document.getElementById("output3").innerHTML = "<h2>openMaxLink attempt:<br/>" + savedkey + "</h2>";
             }
