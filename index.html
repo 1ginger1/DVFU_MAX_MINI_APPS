@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,28 +15,44 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Мини приложение</h1>
 
     <button id="close_app" onclick="window.WebApp.close()">Закрыть приложение</button>
 
-    <button onclick="window.WebApp.openMaxLink('https://max.ru/dev_testing_bot?start=test')">Перейти в бот с параметрами</button>
+    <button onclick="window.WebApp.openMaxLink('https://max.ru/dev_testing_bot?start=test')">Перейти в бот с
+        параметрами</button>
 
     <button onclick="window.WebApp.requestContact()">Запросить номер телефона</button>
 
+    <p id="output3"></p>
+    <p id="output2"></p>
+
     <script src="https://st.max.ru/js/max-web-app.js"></script>
 
-    <!-- <script>
-        const user = WebApp.initData;
-        console.log(user);
+    <script>
+        // const user = WebApp.initData;
+        // console.log(user);
 
-        const button = document.querySelector('#close_app');
+        // const button = document.querySelector('#close_app');
 
-        console.log(button);
-        
-        button.addEventListener('click', () => {
-            window.WebApp.close();
-        })
-    </script> -->
+        // console.log(button);
+
+        // button.addEventListener('click', () => {
+        //     window.WebApp.close();
+        // })
+
+        function OpenMaxLinkFunction() {
+            window.WebApp.openMaxLink("https://max.ru/pupu2").then(res => {
+                savedkey = JSON.stringify(res);
+                document.getElementById("output3").innerHTML = "<h2>openMaxLink attempt:<br/>" + savedkey + "</h2>";
+            }
+            ).catch((err) => {
+                document.getElementById("output2").innerHTML = "<h2>openMaxLink error:<br/>" + err + "</h2>";
+            });
+        }
+    </script>
 </body>
+
 </html>
