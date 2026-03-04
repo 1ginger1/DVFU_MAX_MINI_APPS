@@ -17,7 +17,7 @@
 <body>
     <h1>Мини приложение</h1>
 
-    <button id="close_app">Закрыть приложение</button>
+    <button id="close_app" onclick="window.WebApp.close()">Закрыть приложение</button>
 
     <button onclick="window.WebApp.openMaxLink('https://max.ru/dev_testing_bot?start=test')">Перейти в бот с параметрами</button>
 
@@ -25,7 +25,7 @@
 
     <script src="https://st.max.ru/js/max-web-app.js"></script>
 
-    <script>
+    <!-- <script>
         const user = WebApp.initData;
         console.log(user);
 
@@ -36,6 +36,6 @@
         button.addEventListener('click', () => {
             window.WebApp.close();
         })
-    </script>
+    </script> -->
 </body>
 </html>
